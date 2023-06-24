@@ -5,8 +5,9 @@ import './App.css'
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <p>Microfrontend application app1.</p>
+      <header className='App1-header'>
+        <div>Microfrontend application app1.</div>
+        <div>Exported as App1 from this mcrofrontend application.</div>
       </header>
     </div>
   )
