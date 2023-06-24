@@ -1,0 +1,97 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:import/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true
+  },
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "no-console": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "import/named": "off",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "prefer-const": [
+      0,
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    "import/order": [
+      2,
+      {
+        "newlines-between": "always",
+        "groups": [
+          ["external", "builtin"],
+          [
+            "internal",
+            "sibling",
+            "parent",
+            "unknown",
+            "object",
+            "type",
+            "index"
+          ]
+        ],
+        "pathGroups": [
+          { "pattern": "react*", "group": "external", "position": "before" },
+          { "pattern": "api", "group": "internal" },
+          { "pattern": "assets*", "group": "internal", "position": "after" },
+          { "pattern": "assets/**", "group": "internal", "position": "after" },
+          { "pattern": "api/**", "group": "internal" },
+          { "pattern": "app", "group": "internal" },
+          { "pattern": "components", "group": "internal" },
+          { "pattern": "components/**", "group": "internal" },
+          { "pattern": "hooks", "group": "internal" },
+          { "pattern": "hooks/**", "group": "internal" },
+          { "pattern": "pages", "group": "internal" },
+          { "pattern": "pages/**", "group": "internal" },
+          { "pattern": "store", "group": "internal" },
+          { "pattern": "store/**", "group": "internal" }
+        ]
+      }
+    ],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ]
+  }
+}

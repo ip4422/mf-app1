@@ -1,0 +1,5 @@
+craco.config.js
+build
+node_modules
+public
+/test-results/

@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "trailingComma": "none",
+  "semi": false,
+  "jsxSingleQuote": true,
+  "arrowParens": "avoid",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "overrides": [
+    {
+      "files": "*.css|*.scss",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}
