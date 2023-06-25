@@ -1,4 +1,4 @@
-# Microfrontend app1 application
+# Microfrontend app1 application using CRA and CRACO
 
 ## Description
 
