@@ -1,9 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { ModuleFederationPlugin } = require('webpack').container
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const deps = require('./package.json').dependencies
-
 module.exports = {
   mode: 'development',
   devServer: {
@@ -17,17 +14,7 @@ module.exports = {
         exposes: {
           './App1': './src/App'
         },
-        shared: {
-          ...deps,
-          react: {
-            singleton: true,
-            requiredVersion: deps['react']
-          },
-          'react-dom': {
-            singleton: true,
-            requiredVersion: deps['react-dom']
-          }
-        }
+        shared: ['react', 'react-dom']
       })
     ],
     configure: {
