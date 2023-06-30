@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='App'>
       <header className='App1-header'>
-        <div>Microfrontend application app1.</div>
+        <div>Micro Frontend application app1.</div>
         <div>Exported as App1 from this mcrofrontend application.</div>
       </header>
     </div>
