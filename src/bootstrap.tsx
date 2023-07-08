@@ -5,14 +5,34 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+// We are running through container
+// and we should export the mount function
+// Mount function to start up the app
+const mount = (el: HTMLElement) => {
+  const rootEl = ReactDOM.createRoot(el)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+  rootEl.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  )
+}
+
+// If we are in development and in isolation,
+// call mount immediately
+if (process.env.NODE_ENV === 'development') {
+  const devRoot = document.getElementById('_app1-dev-root') as HTMLElement
+
+  if (devRoot) {
+    mount(devRoot)
+
+    // If you want to start measuring performance in your app, pass a function
+    // to log results (for example: reportWebVitals(console.log))
+    // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+    reportWebVitals()
+  }
+}
+
+// We are running through container
+// and we should export the mount function
+export { mount }
