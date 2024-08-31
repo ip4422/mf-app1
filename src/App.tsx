@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import './App.css'
 
-function App() {
+interface AppProps {
+  settings?: string
+}
+
+const App: React.FC<AppProps> = ({ settings }: { settings?: string }) => {
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(settings)
+  }, [])
+
   return (
     <div className='App'>
       <header className='App1-header'>
