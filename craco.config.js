@@ -95,7 +95,7 @@ module.exports = {
         name: 'app1',
         filename: 'remoteEntry.js',
         exposes: {
-          './App1': './src/App'
+          './App1': './src/app/mfe-app/MfeApp'
         },
         ...(remotes && Object.keys(remotes).length > 0 && { remotes }),
         shared: sharedModules
