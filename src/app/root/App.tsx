@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 
 import { AppSettingsContext } from 'shared/hooks/useAppSettings'
-import { NotFoundPage } from 'pages/not-found/NotFoundPage'
+import { NotFoundPage } from 'pages/not-found'
 import appRoutes from 'app/routes/AppRoutes'
 
 export interface AppSettings {
