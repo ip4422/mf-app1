@@ -5,6 +5,8 @@
   "scripts": {
     "lint": "tsc --noEmit && eslint .",
     "start": "craco start",
+    "startp": "read -p 'Press Enter to continue...' && craco start",
+    "startlogs": "node start-with-pause.js",
     "build": "craco build",
     "test": "craco test",
     "serve": "npm run build && serve -s build -p 3001"
